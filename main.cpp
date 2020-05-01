@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
 #include <SFML/Graphics.hpp>
 using namespace std;
 
@@ -43,6 +42,16 @@ void menu(sf::RenderWindow &  window) {
 }
 
 
+//void getplayercoordinateforview(float x,float y, sf::View view) { //функция для считывания координат игрока
+
+
+    //view.setCenter(550 , y); //следим за игроком, передавая его координаты камере. +100 - сместили камеру по иксу вправо. эксперементируйте
+
+//}
+
+
+
+
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1100, 1500), "100 steps");
@@ -51,14 +60,17 @@ int main() {
 
 
 
-    sf::View view;
-    view.reset(sf::FloatRect(0, 0, 1100, 1500));
+    sf:: Clock clock;
+
+
+
+
 
 
 
     sf::Texture texture;
-    texture.loadFromFile("background.jpg");
-    sf::Sprite sprite(texture, sf::IntRect(0, 0, 1100, 1500));
+    texture.loadFromFile("background.nkIUY.jpg");
+    sf::Sprite sprite(texture, sf::IntRect(0, 0, 1100, 3000));
 
 
 
@@ -83,13 +95,22 @@ int main() {
 
 
 
+
+    float x = 550;
     float y = 0;
+
 
 
 
 
     while( window.isOpen() ) {
         sf::Event event;
+
+
+
+        float time = clock.getElapsedTime().asMicroseconds();
+        clock.restart();
+        time = time / 80;
 
 
         sf::Font font;
@@ -100,6 +121,8 @@ int main() {
         text.setCharacterSize(50);
         text.setPosition(50, 50);
         text.setColor(sf::Color(0, 255, 0));
+
+
 
 
 
@@ -119,11 +142,27 @@ int main() {
 
 
         sf::View view;
+        view.setCenter(550, 750);
         view.reset(sf::FloatRect(0, 0, 1100, 1500));
 
 
 
         while (window.pollEvent(event)) {
+
+
+
+
+
+
+
+            window.setView(view);
+            window.clear();
+
+
+
+
+
+            sf::Vector2i localPosition = sf::Mouse::getPosition(window);
 
 
 
@@ -154,17 +193,24 @@ int main() {
 
 
 
-
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-                view.move(0, y);
                 button1.setPosition(0, 1250 + y);
                 button2.setPosition(550, 1250 + y);
-                y += 100;
+                view.move(0, y);
+                //getplayercoordinateforview(x, y, view);
+                y += 50;
+                cout << x << " " << y << " ";
             }
 
 
-            window.setView(view);
-            window.clear();
+
+            if (localPosition.y > 1400) { view.move(550, y);  button1.setPosition(0, 1250 + y);
+                button2.setPosition(550, 1250 + y); view.setCenter(550, 750 + y); y += 5;}//нижний край - вниз
+            if (localPosition.y < 3) {  view.move(550, -y);  button1.setPosition(0, 1250 - y);
+                button2.setPosition(550, 1250 - y); view.setCenter(550, 750 - y); y += 5; }
+
+
+
             window.draw(sprite);
             window.draw(button1);
             window.draw(button2);
