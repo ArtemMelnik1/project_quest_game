@@ -13,7 +13,7 @@ void menu(sf::RenderWindow &  window) {
     sf::Sprite sprite_menu1(menu1, sf::IntRect(0, 0, 300, 300));
     sf::Sprite sprite_menu2(menu2, sf::IntRect(0, 0, 300, 300));
     sf::Sprite sprite_menu_background(menu_background, sf::IntRect(0,0,1100,1500));
-    bool ismenu = 1;
+    bool ismenu = true;
     sf::Event event1;
     sprite_menu1.setPosition(400, 400);
     sprite_menu2.setPosition(400, 900);
@@ -25,15 +25,13 @@ void menu(sf::RenderWindow &  window) {
             sf::Vector2i mouse1 = sf::Mouse::getPosition(window);
             if (event1.type == sf::Event::Closed)
                 window.close();
-            if (event1.type == sf::Event::MouseButtonPressed) {
-                if (event1.key.code == sf::Mouse::Left) {
-                    if (sprite_menu1.getGlobalBounds().contains(mouse1.x, mouse1.y)) {
-                        ismenu = 0;
-                    }
-                    if (sprite_menu2.getGlobalBounds().contains(mouse1.x, mouse1.y)) {
-                        window.close();
-                        ismenu = 0;
-                    }
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+                if (sprite_menu1.getGlobalBounds().contains(mouse1.x, mouse1.y)) {
+                    ismenu = false;
+                }
+                if (sprite_menu2.getGlobalBounds().contains(mouse1.x, mouse1.y)) {
+                    window.close();
+                    ismenu = false;
                 }
             }
         }
@@ -44,24 +42,17 @@ void menu(sf::RenderWindow &  window) {
     }
 }
 
-void drawing (sf::RenderWindow &  window){
-    sf::Event event2;
-    while (window.pollEvent(event2)){
-        if (event2.type == sf::Event::MouseButtonPressed) {
-            if (event2.key.code == sf::Mouse::Left) {
-                sf::RectangleShape rect(sf::Vector2f(350, 250));
-                rect.setFillColor(sf::Color(0, 255, 0));
-                rect.setPosition(550, 100);
-                window.draw(rect);
-            }
-        }
-    }
-}
+
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1100, 1500), "100 steps");
     menu(window);
-    drawing(window);
+
+
+
+
+    sf::View view;
+    view.reset(sf::FloatRect(0, 0, 1100, 1500));
 
 
 
@@ -92,9 +83,13 @@ int main() {
 
 
 
+    float y = 0;
+
+
+
+
     while( window.isOpen() ) {
         sf::Event event;
-
 
 
         sf::Font font;
@@ -104,73 +99,101 @@ int main() {
         text.setString(a);
         text.setCharacterSize(50);
         text.setPosition(50, 50);
-        text.setColor(sf::Color(0,255,0));
+        text.setColor(sf::Color(0, 255, 0));
+
+
+
+
+
+
+
+
+        sf::Text text1;
+        text1.setFont(font);
+        text1.setString("game");
+        text1.setCharacterSize(50);
+        text1.setPosition(50, 100);
+        text1.setColor(sf::Color(0, 255, 0));
+
+
+
+
+        sf::View view;
+        view.reset(sf::FloatRect(0, 0, 1100, 1500));
 
 
 
         while (window.pollEvent(event)) {
+
+
+
             sf::Vector2i mouse = sf::Mouse::getPosition(window);
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (event.type == sf::Event::MouseButtonPressed) {
-                if (event.key.code == sf::Mouse::Left) {
-                    if (button1.getGlobalBounds().contains(mouse.x, mouse.y)) {
-                        button1.setFillColor(sf::Color(0, 0, 255));
-                        
-                    }
-                    if (button2.getGlobalBounds().contains(mouse.x, mouse.y)) {
-                        button2.setFillColor(sf::Color(30, 90, 40));
-                    }
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+                if (button1.getGlobalBounds().contains(mouse.x, mouse.y)) {
+                    button1.setFillColor(sf::Color(0, 0, 255));
+                    window.draw(text1);
+
+
+                }
+                if (button2.getGlobalBounds().contains(mouse.x, mouse.y)) {
+                    button2.setFillColor(sf::Color(30, 90, 40));
                 }
             }
-
-
-
-
-
 
 
             if (event.type == sf::Event::MouseButtonReleased) {
-                if (event.key.code == sf::Mouse::Left) {
-                    if (button1.getGlobalBounds().contains(mouse.x, mouse.y)) {
-                        button1.setFillColor(sf::Color(0, 255, 0));
-                    }
-                    if (button2.getGlobalBounds().contains(mouse.x, mouse.y)) {
-                        button2.setFillColor(sf::Color(255, 0, 0));
-                    }
+                if (button1.getGlobalBounds().contains(mouse.x, mouse.y)) {
+                    button1.setFillColor(sf::Color(0, 255, 0));
+                }
+                if (button2.getGlobalBounds().contains(mouse.x, mouse.y)) {
+                    button2.setFillColor(sf::Color(255, 0, 0));
                 }
             }
 
 
 
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                view.move(0, y);
+                button1.setPosition(0, 1250 + y);
+                button2.setPosition(550, 1250 + y);
+                y += 100;
+            }
+
+
+            window.setView(view);
+            window.clear();
+            window.draw(sprite);
+            window.draw(button1);
+            window.draw(button2);
+            window.draw(text);
+            window.display();
 
 
 
         }
 
 
-        window.clear();
-        window.draw(sprite);
-        window.draw(button1);
-        window.draw(button2);
-        window.draw(text);
-        window.display();
 
     }
 
+
+
 //   vector<int> numbers;
-  //  string a, b;
+    //  string a, b;
     //ifstream input("game.txt");
-   // try{
-     //   if (!input.is_open()){
-       //     throw "This file does not exist";
-        //}
+    // try{
+    //   if (!input.is_open()){
+    //     throw "This file does not exist";
+    //}
     //}
     //catch (const char* exception){
     //    cerr<< "Error: " << exception << endl;
     //}
     //while (input.is_open()){
-      //  getline(input, a, ' ');
-        //getline(input, b);
+    //  getline(input, a, ' ');
+    //getline(input, b);
     //}
 }

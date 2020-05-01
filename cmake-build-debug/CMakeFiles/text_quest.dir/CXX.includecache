@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/artemmelnik/CLionProjects/text_quest/main.cpp
+/Users/artemmelnik/Documents/GitHub/project_quest_game/main.cpp
 iostream
 -
 fstream

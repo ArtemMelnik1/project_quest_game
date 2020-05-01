@@ -1,4 +1,4 @@
-# Install script for directory: /Users/artemmelnik/CLionProjects/text_quest
+# Install script for directory: /Users/artemmelnik/Documents/GitHub/project_quest_game
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/artemmelnik/CLionProjects/text_quest/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
