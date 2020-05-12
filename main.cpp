@@ -4,6 +4,9 @@
 #include <SFML/Graphics.hpp>
 using namespace std;
 
+
+
+// функция для создания меню(начальное окно), при нажатии на кнопку play меню закрывается и включается игра, при нажатии на красную кнопку, игра закрывается
 void menu(sf::RenderWindow &  window) {
     sf::Texture menu1, menu2, menu_background;
     menu1.loadFromFile("1486486316-arrow-film-movie-play-player-start-video_81236.aZjmZ.png");
@@ -42,12 +45,6 @@ void menu(sf::RenderWindow &  window) {
 }
 
 
-//void getplayercoordinateforview(float x,float y, sf::View view) { //функция для считывания координат игрока
-
-
-    //view.setCenter(550 , y); //следим за игроком, передавая его координаты камере. +100 - сместили камеру по иксу вправо. эксперементируйте
-
-//}
 
 
 
@@ -70,17 +67,17 @@ int main() {
 
     sf::Texture texture;
     texture.loadFromFile("background.nkIUY.jpg");
-    sf::Sprite sprite(texture, sf::IntRect(0, 0, 1100, 3000));
+    sf::Sprite sprite(texture, sf::IntRect(0, 0, 1100, 3000)); // отрисовка фона
 
 
 
 
 
-    sf::RectangleShape button1(sf::Vector2f(550, 250));
+    sf::RectangleShape button1(sf::Vector2f(550, 250)); // левая кнопка
     sf::RectangleShape button2(sf::Vector2f(550, 250));
     button1.setFillColor(sf::Color(0, 255, 0));
     button1.setPosition(0, 1250);
-    button2.setFillColor(sf::Color(255, 0, 0));
+    button2.setFillColor(sf::Color(255, 0, 0)); // правая кнопка
     button2.setPosition(550, 1250);
 
 
@@ -136,7 +133,7 @@ int main() {
         text1.setString("game");
         text1.setCharacterSize(50);
         text1.setPosition(50, 100);
-        text1.setColor(sf::Color(0, 255, 0));
+        text1.setColor(sf::Color(0, 255, 0)); // текст, который должен выводиться при нажатии кнопки (не выводится)
 
 
 
@@ -172,12 +169,12 @@ int main() {
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 if (button1.getGlobalBounds().contains(mouse.x, mouse.y)) {
                     button1.setFillColor(sf::Color(0, 0, 255));
-                    window.draw(text1);
+                    window.draw(text1); // если координаты мыши находятся внутри левой нижней кнопки и она нажата, то кнопка меняет цвет + почему-то на экране не отрисовывается текст
 
 
                 }
                 if (button2.getGlobalBounds().contains(mouse.x, mouse.y)) {
-                    button2.setFillColor(sf::Color(30, 90, 40));
+                    button2.setFillColor(sf::Color(30, 90, 40)); // если нажата правая нижняя кнопка, то она также меняет цвет
                 }
             }
 
@@ -189,7 +186,7 @@ int main() {
                 if (button2.getGlobalBounds().contains(mouse.x, mouse.y)) {
                     button2.setFillColor(sf::Color(255, 0, 0));
                 }
-            }
+            } // если кнопка мыша не нажата, то цвет кнопки возвращается в изначальное (для эффекта нажатия кнопки)
 
 
 
@@ -197,9 +194,8 @@ int main() {
                 button1.setPosition(0, 1250 + y);
                 button2.setPosition(550, 1250 + y);
                 view.move(0, y);
-                //getplayercoordinateforview(x, y, view);
                 y += 50;
-                cout << x << " " << y << " ";
+                cout << x << " " << y << " "; // для проверки координат скроллинга карты через кнопку (оказалось сложнее)
             }
 
 
@@ -207,7 +203,7 @@ int main() {
             if (localPosition.y > 1400) { view.move(550, y);  button1.setPosition(0, 1250 + y);
                 button2.setPosition(550, 1250 + y); view.setCenter(550, 750 + y); y += 5;}//нижний край - вниз
             if (localPosition.y < 3) {  view.move(550, -y);  button1.setPosition(0, 1250 - y);
-                button2.setPosition(550, 1250 - y); view.setCenter(550, 750 - y); y += 5; }
+                button2.setPosition(550, 1250 - y); view.setCenter(550, 750 - y); y += 5; } // если мышь находится внизу или наверху, происходит скроллинг фона и кнопок (с этим тоже есть трудности)
 
 
 
