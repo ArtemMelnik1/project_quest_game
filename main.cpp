@@ -207,7 +207,7 @@ int main() {
 
 
 
-            window.draw(sprite);
+            //window.draw(sprite);
             window.draw(button1);
             window.draw(button2);
             window.draw(text);

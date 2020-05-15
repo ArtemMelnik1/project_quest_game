@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/artemmelnik/Documents/GitHub/project_quest_game/engine.cpp">
+			<Option target="text_quest"/>
+		</Unit>
 		<Unit filename="/Users/artemmelnik/Documents/GitHub/project_quest_game/main.cpp">
 			<Option target="text_quest"/>
 		</Unit>
