@@ -10,10 +10,10 @@ using namespace std;
 
 
 int main() {
-    vector<vector<int>> varities;
-    vector<int> var1(0);
+    vector<vector<int>> varities; // варианты ответов для каждой строки (по сути состоит из var1)
+    vector<int> var1(0); // варианты ответов (всего 2 ячейки)
     int l = 0;
-    vector<int> num_str;
+    vector<int> num_str; // вектор, состоящий из номеров строк (первое число в строке)
 
     string ffff;
 
@@ -22,7 +22,7 @@ int main() {
     ifstream f1;
     vector<string> stroka;
     string strochka;
-    string chisletsa;
+    string chisletsa; // варианты ответов (на какую строку переход)
 
 
 
@@ -39,8 +39,8 @@ int main() {
         getline(f1, strochka);
         ffff += strochka[0];
         int neww = atoi(ffff.c_str());
-        num_str.push_back(neww);
-        strochka.erase(strochka.begin(), strochka.begin()+2);
+        num_str.push_back(neww); // добавление номера строки
+        strochka.erase(strochka.begin(), strochka.begin()+2); // удаление этого номера из строки (чтобы вывод был без него)
         ffff.clear();
         int p = strochka.length();
 
@@ -50,7 +50,7 @@ int main() {
 
         if (isdigit(strochka[p-1])){
             chisletsa += strochka.substr(strochka.length()-3, 3);
-            strochka.erase(strochka.end()-3, strochka.end());
+            strochka.erase(strochka.end()-3, strochka.end()); // удаление вариантов ответов из основного текста (чтобы выводился только основной текст)
         }
 
 
@@ -60,7 +60,7 @@ int main() {
             if (isdigit(s)){
                 ffff += s;
                 int neww1 = atoi(ffff.c_str());
-                var1.push_back(neww1);
+                var1.push_back(neww1); // загоняем в вектор варианты ответов
                 ffff.clear();
             }
         }
@@ -68,7 +68,7 @@ int main() {
 
 
 
-        varities.push_back(var1);
+        varities.push_back(var1); // загоняем в основной вектор вариантов ответов
         var1.clear();
         chisletsa.clear();
         stroka.push_back(strochka);
@@ -82,15 +82,15 @@ int main() {
     while(igra){
         for (int n = 0; n <= stroka.size();){
             int inp;
-            cout << stroka[n]<< endl;
+            cout << stroka[n]<< endl; // вывод строки (уже без лишних чисел) n - номер строкип
             cin >> inp;
             if (inp == 1){
-                n = varities[l][0];
-                l = varities[l][0];
+                n = varities[l][0]; //лучше проверить на debug, как это происходит
+                l = varities[l][0]; //лучше проверить на debug, как это происходит
             }
             else if (inp == 2){
-                n = varities[l][1];
-                l = varities[l][1];
+                n = varities[l][1]; //лучше проверить на debug, как это происходит
+                l = varities[l][1]; //лучше проверить на debug, как это происходит
             }
         }
     }
