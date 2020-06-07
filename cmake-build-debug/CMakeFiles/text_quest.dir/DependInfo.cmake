@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/artemmelnik/Documents/GitHub/project_quest_game/engine.cpp" "/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles/text_quest.dir/engine.cpp.o"
   "/Users/artemmelnik/Documents/GitHub/project_quest_game/main.cpp" "/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles/text_quest.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
