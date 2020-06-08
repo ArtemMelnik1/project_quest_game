@@ -172,6 +172,8 @@ int main()
                     gg = varities[l][0];
                     l = varities[l][0];
 
+                    button1.setFillColor(sf::Color(30, 30, 30));
+
 
 
                     std::string str = stroka[gg];
@@ -213,6 +215,8 @@ int main()
                     gg = varities[l][1]; //лучше проверить на debug, как это происходит
                     l = varities[l][1];
 
+                    button2.setFillColor(sf::Color(10, 40, 50));
+
 
                     std::string str = stroka[gg];
                     sf::Text text1;
@@ -241,6 +245,16 @@ int main()
                     drawText.push_back(text1);
                     y += n*23;
                     y += 60;
+                }
+
+                if (event1.type == sf::Event::MouseButtonReleased && sf::IntRect(0, 900, 100, 100).contains(sf::Mouse::getPosition(window)))
+                {
+                    button1.setFillColor(sf::Color(0, 255, 0));
+                }
+
+                if (event1.type == sf::Event::MouseButtonReleased && sf::IntRect(550, 900, 100, 100).contains(sf::Mouse::getPosition(window)))
+                {
+                    button2.setFillColor(sf::Color(255, 0, 0));
                 }
 
 
