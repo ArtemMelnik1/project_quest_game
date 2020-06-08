@@ -17,6 +17,16 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="test">
+				<Option working_dir="/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug"/>
 				<Option type="4"/>
@@ -32,6 +42,48 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="quest_test">
+				<Option output="/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/quest_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 quest_test"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="quest_test/fast">
+				<Option output="/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/quest_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 quest_test/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -82,6 +134,12 @@
 		</Build>
 		<Unit filename="/Users/artemmelnik/Documents/GitHub/project_quest_game/main.cpp">
 			<Option target="text_quest"/>
+		</Unit>
+		<Unit filename="/Users/artemmelnik/Documents/GitHub/project_quest_game/main.hpp">
+			<Option target="text_quest"/>
+		</Unit>
+		<Unit filename="/Users/artemmelnik/Documents/GitHub/project_quest_game/test.cpp">
+			<Option target="quest_test"/>
 		</Unit>
 		<Unit filename="/Users/artemmelnik/Documents/GitHub/project_quest_game/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

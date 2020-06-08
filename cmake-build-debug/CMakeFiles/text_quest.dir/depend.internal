@@ -3,6 +3,7 @@
 
 CMakeFiles/text_quest.dir/main.cpp.o
  /Users/artemmelnik/Documents/GitHub/project_quest_game/main.cpp
+ /Users/artemmelnik/Documents/GitHub/project_quest_game/main.hpp
  /usr/local/include/SFML/Config.hpp
  /usr/local/include/SFML/Graphics.hpp
  /usr/local/include/SFML/Graphics/BlendMode.hpp

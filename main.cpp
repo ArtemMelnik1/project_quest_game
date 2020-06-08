@@ -1,12 +1,15 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <SFML/Graphics.hpp>
-
+#include "main.hpp"
+bool is_but1(sf::Event event )
+{
+    bool T_or_F = false;
+    if (event.type == sf::Event::MouseButtonPressed)
+        T_or_F = true;
+    return T_or_F;
+}
 
 int main()
 {
+
 
 
     std::vector<std::vector<int>> varities; /// варианты ответов для каждой строки (по сути состоит из var1)
@@ -165,7 +168,7 @@ int main()
                 if (event1.type == sf::Event::MouseButtonPressed && sf::IntRect(0, 900, 100, 100).contains(sf::Mouse::getPosition(window)) && varities[l].size() != 0)
 /// если нажата зеленая кнопка - переход со сюжету, описанным в "game.txt"
                 {
-
+                    press1 = true;
 
 
 
@@ -210,7 +213,7 @@ int main()
                 if (event1.type == sf::Event::MouseButtonPressed && sf::IntRect(550, 900, 100, 100).contains(sf::Mouse::getPosition(window)) && varities[l].size() != 0){
 
 /// если нажата зеленая кнопка - переход со сюжету, описанным в "game.txt"
-
+                    press2 = true;
 
                     gg = varities[l][1]; //лучше проверить на debug, как это происходит
                     l = varities[l][1];

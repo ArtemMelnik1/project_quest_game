@@ -65,13 +65,50 @@ CMAKE_SOURCE_DIR = /Users/artemmelnik/Documents/GitHub/project_quest_game
 CMAKE_BINARY_DIR = /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/quest_test.dir
+
+# All Build rule for target.
+CMakeFiles/quest_test.dir/all:
+	$(MAKE) -f CMakeFiles/quest_test.dir/build.make CMakeFiles/quest_test.dir/depend
+	$(MAKE) -f CMakeFiles/quest_test.dir/build.make CMakeFiles/quest_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target quest_test"
+.PHONY : CMakeFiles/quest_test.dir/all
+
+# Include target in all.
+all: CMakeFiles/quest_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/quest_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/quest_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/quest_test.dir/rule
+
+# Convenience name for target.
+quest_test: CMakeFiles/quest_test.dir/rule
+
+.PHONY : quest_test
+
+# clean rule for target.
+CMakeFiles/quest_test.dir/clean:
+	$(MAKE) -f CMakeFiles/quest_test.dir/build.make CMakeFiles/quest_test.dir/clean
+.PHONY : CMakeFiles/quest_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/quest_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/text_quest.dir
 
 # All Build rule for target.
 CMakeFiles/text_quest.dir/all:
 	$(MAKE) -f CMakeFiles/text_quest.dir/build.make CMakeFiles/text_quest.dir/depend
 	$(MAKE) -f CMakeFiles/text_quest.dir/build.make CMakeFiles/text_quest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target text_quest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target text_quest"
 .PHONY : CMakeFiles/text_quest.dir/all
 
 # Include target in all.
