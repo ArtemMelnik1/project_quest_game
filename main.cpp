@@ -1,11 +1,5 @@
 #include "main.hpp"
-bool is_but1(sf::Event event )
-{
-    bool T_or_F = false;
-    if (event.type == sf::Event::MouseButtonPressed)
-        T_or_F = true;
-    return T_or_F;
-}
+
 
 int main()
 {

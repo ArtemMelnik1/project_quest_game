@@ -5,11 +5,11 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
-add_executable(text_quest main.cpp)
+add_executable(text_quest main.cpp func.cpp)
 
 target_link_libraries(text_quest sfml-graphics sfml-audio)
 
-add_executable(quest_test test.cpp)
+add_executable(quest_test test.cpp func.cpp)
 
 target_link_libraries(quest_test sfml-graphics sfml-audio)
 

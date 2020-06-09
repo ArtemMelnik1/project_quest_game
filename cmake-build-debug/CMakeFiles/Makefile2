@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-
 CMakeFiles/quest_test.dir/all:
 	$(MAKE) -f CMakeFiles/quest_test.dir/build.make CMakeFiles/quest_test.dir/depend
 	$(MAKE) -f CMakeFiles/quest_test.dir/build.make CMakeFiles/quest_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target quest_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target quest_test"
 .PHONY : CMakeFiles/quest_test.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/quest_test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/quest_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/quest_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/quest_test.dir/rule
@@ -108,7 +108,7 @@ clean: CMakeFiles/quest_test.dir/clean
 CMakeFiles/text_quest.dir/all:
 	$(MAKE) -f CMakeFiles/text_quest.dir/build.make CMakeFiles/text_quest.dir/depend
 	$(MAKE) -f CMakeFiles/text_quest.dir/build.make CMakeFiles/text_quest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target text_quest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles --progress-num=4,5,6 "Built target text_quest"
 .PHONY : CMakeFiles/text_quest.dir/all
 
 # Include target in all.
@@ -118,7 +118,7 @@ all: CMakeFiles/text_quest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/text_quest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/text_quest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/artemmelnik/Documents/GitHub/project_quest_game/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/text_quest.dir/rule

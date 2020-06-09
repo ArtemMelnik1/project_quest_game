@@ -147,6 +147,36 @@ text_quest/fast:
 	$(MAKE) -f CMakeFiles/text_quest.dir/build.make CMakeFiles/text_quest.dir/build
 .PHONY : text_quest/fast
 
+func.o: func.cpp.o
+
+.PHONY : func.o
+
+# target to build an object file
+func.cpp.o:
+	$(MAKE) -f CMakeFiles/quest_test.dir/build.make CMakeFiles/quest_test.dir/func.cpp.o
+	$(MAKE) -f CMakeFiles/text_quest.dir/build.make CMakeFiles/text_quest.dir/func.cpp.o
+.PHONY : func.cpp.o
+
+func.i: func.cpp.i
+
+.PHONY : func.i
+
+# target to preprocess a source file
+func.cpp.i:
+	$(MAKE) -f CMakeFiles/quest_test.dir/build.make CMakeFiles/quest_test.dir/func.cpp.i
+	$(MAKE) -f CMakeFiles/text_quest.dir/build.make CMakeFiles/text_quest.dir/func.cpp.i
+.PHONY : func.cpp.i
+
+func.s: func.cpp.s
+
+.PHONY : func.s
+
+# target to generate assembly for a file
+func.cpp.s:
+	$(MAKE) -f CMakeFiles/quest_test.dir/build.make CMakeFiles/quest_test.dir/func.cpp.s
+	$(MAKE) -f CMakeFiles/text_quest.dir/build.make CMakeFiles/text_quest.dir/func.cpp.s
+.PHONY : func.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -212,6 +242,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... quest_test"
 	@echo "... text_quest"
+	@echo "... func.o"
+	@echo "... func.i"
+	@echo "... func.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
