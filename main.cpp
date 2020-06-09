@@ -34,12 +34,19 @@ int main()
 
 
     while(!f1.eof()){
-        getline(f1, strochka);
+       getline(f1, strochka);
         ffff += strochka[0];
-        int neww = atoi(ffff.c_str());
-        num_str.push_back(neww); /// добавление номера строки
-        strochka.erase(strochka.begin(), strochka.begin()+2); /// удаление этого номера из строки (чтобы вывод был без него)
-        ffff.clear();
+        if (ffff.find_last_not_of("0123456789")){
+            int neww = atoi(ffff.c_str());
+            num_str.push_back(neww); /// добавление номера строки
+            strochka.erase(strochka.begin(), strochka.begin()+2); /// удаление этого номера из строки (чтобы вывод был без него)
+            ffff.clear();
+        }
+        else{
+            perror("[Error] ");
+            exit(0);
+
+        }
         int p = strochka.length();
 
 
@@ -162,7 +169,6 @@ int main()
                 if (event1.type == sf::Event::MouseButtonPressed && sf::IntRect(0, 900, 100, 100).contains(sf::Mouse::getPosition(window)) && varities[l].size() != 0)
 /// если нажата зеленая кнопка - переход со сюжету, описанным в "game.txt"
                 {
-                    press1 = true;
 
 
 
@@ -207,7 +213,6 @@ int main()
                 if (event1.type == sf::Event::MouseButtonPressed && sf::IntRect(550, 900, 100, 100).contains(sf::Mouse::getPosition(window)) && varities[l].size() != 0){
 
 /// если нажата зеленая кнопка - переход со сюжету, описанным в "game.txt"
-                    press2 = true;
 
                     gg = varities[l][1]; //лучше проверить на debug, как это происходит
                     l = varities[l][1];
